@@ -24,6 +24,14 @@
 
 <br><br><br><br>
 
+## Contributing
+
+Contributions are always welcome!
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for ways to get started.
+</br></br>
+
+
 ## 🪪&nbsp;&nbsp; Licensing Information
 
 - It is licensed under the [MIT License](./LICENSE). Feel free to learn, add upon, and share!
