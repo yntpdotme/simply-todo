@@ -20,3 +20,10 @@
 [🗂️&nbsp; Frontend](./client/README.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Backend &nbsp;📂](./server/README.md)
 
 </h2>
+
+
+<br><br><br><br>
+
+## 🪪&nbsp;&nbsp; Licensing Information
+
+- It is licensed under the [MIT License](./LICENSE). Feel free to learn, add upon, and share!
