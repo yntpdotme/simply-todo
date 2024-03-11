@@ -1,4 +1,4 @@
-import {registerUser} from './auth.controllers.js';
+import {registerUser, authenticateUser} from './auth.controllers.js';
 import {healthcheck} from './healthcheck.controllers.js';
 
-export {registerUser, healthcheck};
+export {registerUser, authenticateUser, healthcheck};

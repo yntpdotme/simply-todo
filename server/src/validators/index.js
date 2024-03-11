@@ -1,3 +1,3 @@
-import {ValidateRegister} from './auth.validators.js';
+import {ValidateSignin, ValidateRegister} from './auth.validators.js';
 
-export {ValidateRegister};
+export {ValidateRegister, ValidateSignin};
