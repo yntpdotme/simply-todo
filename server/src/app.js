@@ -1,6 +1,6 @@
 import express from 'express';
 
-import {healthCheckRouter} from './routes/index.js';
+import {authRouter, healthCheckRouter} from './routes/index.js';
 import {errorHandler} from './middlewares/index.js';
 
 const app = express();
@@ -10,6 +10,7 @@ app.use(express.json({limit: '16kb'}));
 
 // healthcheck
 app.use('/api/healthcheck', healthCheckRouter);
+app.use('/api/auth', authRouter);
 
 // error handling middleware
 app.use(errorHandler);
