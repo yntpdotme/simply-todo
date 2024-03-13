@@ -11,6 +11,7 @@ export default defineConfig({
       '@hooks': '/src/hooks',
       '@pages': '/src/pages',
       '@services': '/src/services',
+      '@validators': '/src/validators',
     },
   },
 });
