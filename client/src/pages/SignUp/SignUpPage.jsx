@@ -1,6 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom';
 
-import {AuthForm} from '@components';
+import {AuthForm, GuestLogin} from '@components';
 import './SignUpPage.css';
 
 const SignUpPage = () => {
@@ -12,7 +12,7 @@ const SignUpPage = () => {
 
   return (
     <div>
-      <h1>Create Account</h1>
+      <p className='signup'>Create an account</p>
       <div className="authform">
         <AuthForm
           onSubmit={handleSignUp}
@@ -23,6 +23,7 @@ const SignUpPage = () => {
       <p className="footer">
         Have an account? <Link to="/signin">Sign In</Link>
       </p>
+      <GuestLogin label={'Try as a Guest'} />
     </div>
   );
 };

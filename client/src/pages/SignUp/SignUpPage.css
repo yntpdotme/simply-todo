@@ -1,9 +1,15 @@
 .footer {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .authform {
-  width: 400px;
+  width: 350px;
+  margin: auto;
+}
+
+.signup {
+  color: #fff;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 480px) {

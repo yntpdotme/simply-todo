@@ -1,6 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom';
 
-import {AuthForm} from '@components';
+import {AuthForm, GuestLogin} from '@components';
 
 import './SignInPage.css';
 
@@ -13,13 +13,14 @@ const SignInPage = () => {
 
   return (
     <div>
-      <h1>Log In</h1>
+      <p className='signin'>Sign in to your account</p>
       <div className="authform">
         <AuthForm onSubmit={handleSignIn} buttonText="Sign in" />
       </div>
       <p className="footer">
         No Account? <Link to="/signup">Sign Up</Link>
       </p>
+      <GuestLogin />
     </div>
   );
 };
