@@ -1,0 +1,14 @@
+.footer {
+  font-size: 1.3rem;
+}
+
+.authform {
+  width: 400px;
+}
+
+@media screen and (max-width: 480px) {
+  .authform {
+    width: 300px;
+    margin: 0 5px;
+  }
+}
