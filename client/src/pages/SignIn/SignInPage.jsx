@@ -13,7 +13,7 @@ const SignInPage = () => {
 
   return (
     <div>
-      <p className='signin'>Sign in to your account</p>
+      <p className='signin'>Sign In</p>
       <div className="authform">
         <AuthForm onSubmit={handleSignIn} buttonText="Sign in" />
       </div>

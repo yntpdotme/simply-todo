@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1d1d1d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -62,7 +62,6 @@ input {
   font-size: 1.1rem;
   font-weight: 500;
   font-family: inherit;
-  /* background-color: #fff; */
   cursor: pointer;
   transition: border-color 0.25s;
   outline: none;
