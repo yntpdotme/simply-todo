@@ -2,21 +2,53 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router';
 
 import {useTodos} from '@hooks';
-import {LocalStorage} from '@services';
+import {LocalStorage, TodoService} from '@services';
 import {CheckBox} from '@components';
 import {plusIcon, trashIcon, submitIcon} from '@assets';
 
 import './TodosPage.css';
 
 const TodosPage = () => {
-  const {todos, isLoading} = useTodos();
+  const {todos, isLoading, setTodos, setError} = useTodos();
   const [showInputs, setShowInputs] = useState(false);
+  const [newTodo, setNewTodo] = useState({
+    title: '',
+    description: '',
+    userId: '',
+  });
 
   const navigate = useNavigate();
 
   const logOut = () => {
     LocalStorage.clear();
     navigate('/');
+  };
+
+  const createTodo = async () => {
+    if (!newTodo.title || !newTodo.description) return;
+
+    const oldTodos = [...todos];
+
+    try {
+      // Update the UI optimistically
+      setTodos([...todos, newTodo]);
+
+      // API Call
+      const response = await TodoService.createTodo(newTodo);
+
+      // Update the UI with the response data
+      setTodos([...todos, response.data.data]);
+      setNewTodo({
+        title: '',
+        description: '',
+        userId: '',
+      });
+    } catch (error) {
+      setError(error.message);
+
+      // Revert the UI Update
+      setTodos(oldTodos);
+    }
   };
 
   return (
@@ -67,14 +99,29 @@ const TodosPage = () => {
             </button>
             {showInputs && (
               <div className="add-todo">
-                <input type="text" placeholder="Task name" />
+                <input
+                  type="text"
+                  placeholder="Task name"
+                  value={newTodo.title}
+                  onChange={e =>
+                    setNewTodo(old => ({...old, title: e.target.value}))
+                  }
+                />
                 <div className="submit-todo">
                   <input
                     type="text"
                     placeholder="Description"
+                    value={newTodo.description}
+                    onChange={e =>
+                      setNewTodo(old => ({...old, description: e.target.value}))
+                    }
                     className="description"
                   />
-                  <img src={submitIcon} className="submit-icon" />
+                  <img
+                    src={submitIcon}
+                    className="submit-icon"
+                    onClick={createTodo}
+                  />
                 </div>
               </div>
             )}
