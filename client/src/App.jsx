@@ -1,10 +1,20 @@
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+import {useEffect} from 'react';
 
+import {LocalStorage} from '@services';
 import {HomePage, SignInPage, SignUpPage, TodosPage} from '@pages';
 
 import './App.css';
 
 const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (['/', '/signin', '/signup'].includes(location.pathname)) return;
+    if (!LocalStorage.get('accessToken')) navigate('/');
+  }, [navigate, location]);
+
   return (
     <>
       <Routes>

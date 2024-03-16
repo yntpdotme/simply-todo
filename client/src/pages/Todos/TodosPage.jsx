@@ -2,18 +2,20 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router';
 
 import {useTodos} from '@hooks';
+import {LocalStorage} from '@services';
 import {CheckBox} from '@components';
 import {plusIcon, trashIcon, submitIcon} from '@assets';
 
 import './TodosPage.css';
 
 const TodosPage = () => {
-  const { todos, isLoading } = useTodos();
-
+  const {todos, isLoading} = useTodos();
   const [showInputs, setShowInputs] = useState(false);
+
   const navigate = useNavigate();
 
   const logOut = () => {
+    LocalStorage.clear();
     navigate('/');
   };
 
@@ -32,7 +34,7 @@ const TodosPage = () => {
           <>
             <div className="todos-list">
               {todos.length === 0 ? (
-                <div className='empty'>Hmm...No Tasks found.</div>
+                <div className="empty">Hmm...No Tasks found.</div>
               ) : (
                 todos?.map((todo, index) => (
                   <div key={index} className="todo-item">
