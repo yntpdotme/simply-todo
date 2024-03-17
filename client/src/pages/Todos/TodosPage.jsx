@@ -51,6 +51,24 @@ const TodosPage = () => {
     }
   };
 
+  const updateTodo = async todo => {
+    const oldTodos = [...todos];
+
+    try {
+      const updatedTodo = {...todo, isComplete: !todo.isComplete};
+
+      // Update the UI optimistically
+      setTodos(todos.map(t => (t._id === todo._id ? updatedTodo : t)));
+
+      // API Call
+      await TodoService.updateTodo(updatedTodo);
+    } catch (error) {
+      setError(error.message);
+      // Revert the UI Update
+      setTodos(oldTodos);
+    }
+  };
+
   return (
     <>
       <button className="logout-button" onClick={logOut}>
@@ -70,7 +88,14 @@ const TodosPage = () => {
               ) : (
                 todos?.map((todo, index) => (
                   <div key={index} className="todo-item">
-                    <CheckBox id={todo._id} checked={todo.isComplete} />
+                    <CheckBox
+                      id={todo._id}
+                      checked={todo.isComplete}
+                      onChange={() => {
+                        updateTodo(todo);
+                      }}
+                    />
+
                     <label
                       htmlFor={`task${todo._id}`}
                       className={`todo-label ${
@@ -82,6 +107,7 @@ const TodosPage = () => {
                         {todo.description}
                       </span>
                     </label>
+
                     <img src={trashIcon} className="trash-icon" />
                   </div>
                 ))
