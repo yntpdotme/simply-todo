@@ -69,6 +69,22 @@ const TodosPage = () => {
     }
   };
 
+  const deleteTodo = async todoId => {
+    const oldTodos = [...todos];
+
+    try {
+      // Update the UI optimistically
+      setTodos(todos.filter(t => t._id !== todoId));
+
+      // API Call
+      await TodoService.deleteTodo(todoId);
+    } catch (error) {
+      setError(error.message);
+      // Revert the UI Update
+      setTodos(oldTodos);
+    }
+  };
+
   return (
     <>
       <button className="logout-button" onClick={logOut}>
@@ -108,7 +124,11 @@ const TodosPage = () => {
                       </span>
                     </label>
 
-                    <img src={trashIcon} className="trash-icon" />
+                    <img
+                      src={trashIcon}
+                      className="trash-icon"
+                      onClick={() => deleteTodo(todo._id)}
+                    />
                   </div>
                 ))
               )}
@@ -146,7 +166,10 @@ const TodosPage = () => {
                   <img
                     src={submitIcon}
                     className="submit-icon"
-                    onClick={createTodo}
+                    onClick={() => {
+                      createTodo();
+                      setShowInputs(false);
+                    }}
                   />
                 </div>
               </div>

@@ -14,7 +14,7 @@
   flex-direction: column;
   max-width: 600px;
   min-width: 300px;
-  min-height: 300px;
+  /* min-height: 300px; */
   margin: auto;
   margin-top: 50px;
   padding: 20px;
@@ -130,7 +130,7 @@
   width: 32px;
   height: 32px;
   animation: spin 0.8s linear infinite;
-  margin: auto;
+  margin: 5rem auto;
 }
 
 @keyframes spin {
