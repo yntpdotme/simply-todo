@@ -8,8 +8,8 @@ const todoCreateValidator = todo => {
         invalid_type_error: 'Title must be a string',
       })
       .trim()
-      .min(3, {message: 'Must be 3 or more characters long'})
-      .max(255, {message: 'Must be 255 or fewer characters long'}),
+      .min(3, {message: 'Title must be 3 or more characters long'})
+      .max(255, {message: 'Title must be 255 or fewer characters long'}),
 
     description: z
       .string({
@@ -17,8 +17,8 @@ const todoCreateValidator = todo => {
         invalid_type_error: 'Description must be a string',
       })
       .trim()
-      .min(3, {message: 'Must be 3 or more characters long'})
-      .max(1024, {message: 'Must be 1024 or fewer characters long'}),
+      .min(3, {message: 'Description must be 3 or more characters long'})
+      .max(1024, {message: 'Description must be 1024 or fewer characters long'}),
   });
 
   return schema.safeParse(todo);

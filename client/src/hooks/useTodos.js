@@ -17,7 +17,12 @@ const useTodos = () => {
       })
       .catch(error => {
         if (error instanceof CanceledError) return;
-        setError(error.message);
+
+        let errorMessage = 'Error in Fetching Tasks. Please try again.';
+        if (error?.response?.data?.message)
+          errorMessage = error.response.data.message;
+
+        setError(errorMessage);
       })
       .finally(() => {
         // Simulate loader delay for 1 seconds

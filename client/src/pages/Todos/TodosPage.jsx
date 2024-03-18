@@ -1,15 +1,15 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router';
 
 import {useTodos} from '@hooks';
 import {LocalStorage, TodoService} from '@services';
-import {CheckBox} from '@components';
+import {CheckBox, ErrorSnackbar} from '@components';
 import {plusIcon, trashIcon, submitIcon} from '@assets';
 
 import './TodosPage.css';
 
 const TodosPage = () => {
-  const {todos, isLoading, setTodos, setError} = useTodos();
+  const {todos, error, isLoading, setTodos, setError} = useTodos();
   const [showInputs, setShowInputs] = useState(false);
   const [newTodo, setNewTodo] = useState({
     title: '',
@@ -44,7 +44,11 @@ const TodosPage = () => {
         userId: '',
       });
     } catch (error) {
-      setError(error.message);
+      let errorMessage = 'Error in Creating Task. Please try again.';
+      if (error?.response?.data?.message)
+        errorMessage = error.response.data.message;
+
+      setError(errorMessage);
 
       // Revert the UI Update
       setTodos(oldTodos);
@@ -63,7 +67,12 @@ const TodosPage = () => {
       // API Call
       await TodoService.updateTodo(updatedTodo);
     } catch (error) {
-      setError(error.message);
+      let errorMessage = 'Error in Updating Task. Please try again.';
+      if (error?.response?.data?.message)
+        errorMessage = error.response.data.message;
+
+      setError(errorMessage);
+
       // Revert the UI Update
       setTodos(oldTodos);
     }
@@ -79,11 +88,27 @@ const TodosPage = () => {
       // API Call
       await TodoService.deleteTodo(todoId);
     } catch (error) {
-      setError(error.message);
+      let errorMessage = 'Error in Deleting Task. Please try again.';
+      if (error?.response?.data?.message)
+        errorMessage = error.response.data.message;
+
+      setError(errorMessage);
+
       // Revert the UI Update
       setTodos(oldTodos);
     }
   };
+
+  useEffect(() => {
+    if (error) {
+      // Reset error after 5 seconds
+      const timer = setTimeout(() => {
+        setError('');
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [error, setError]);
 
   return (
     <>
@@ -177,6 +202,8 @@ const TodosPage = () => {
           </>
         )}
       </div>
+
+      {error?.length > 0 && <ErrorSnackbar label={error} />}
     </>
   );
 };
