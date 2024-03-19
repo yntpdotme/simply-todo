@@ -1,6 +1,6 @@
 <h3 align="center">
 
-[🗂️&nbsp; Source Code](../client/)
+ <img src = "../assets/live.gif" width = 20px align="center"/> &nbsp;[Experince Live](https://simply-todo-client.vercel.app/) &nbsp;» &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; «[&nbsp; Source Code &nbsp;](../client/)<img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 22px align="top"/> 
 
 </h3>
 <br>
@@ -17,15 +17,19 @@
 
 <br>
 
-<p align=center>
-  <img alt="Jio Network blocking the view? Network switch reveals the magic!" src="./src/assets/ui-1.png">
-<p>
+<a href="https://simply-todo-client.vercel.app/">
+   <p align=center>
+     <img alt="Jio Network blocking the view? Network switch reveals the magic!" src="./src/assets/ui-1.png">
+   <p>
+</a>
 
 <br>
 
-<p align=center>
-  <img alt="Jio Network blocking the view? Network switch reveals the magic!" src="./src/assets/ui-2.png">
-<p>
+<a href="https://simply-todo-client.vercel.app/">
+   <p align=center>
+     <img alt="Jio Network blocking the view? Network switch reveals the magic!" src="./src/assets/ui-2.png">
+   <p>
+</a>
 
 <br><br>
 
