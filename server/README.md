@@ -14,6 +14,17 @@
 
 <br>
 
+## Server Health 🛠️
+
+### - Health Check
+
+- Endpoint: `/api/healthcheck`
+
+- Method: `GET`
+
+- Description: Verifies the health status of the server.
+
+
 ## User Authentication &nbsp; 🔐
 
 ### - &nbsp;Sign Up
