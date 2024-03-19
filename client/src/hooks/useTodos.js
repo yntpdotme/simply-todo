@@ -25,10 +25,10 @@ const useTodos = () => {
         setError(errorMessage);
       })
       .finally(() => {
-        // Simulate loader delay for 1 seconds
+        // Simulate loader delay for 0.5 seconds
         setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 500);
       });
 
     return () => cancel();
