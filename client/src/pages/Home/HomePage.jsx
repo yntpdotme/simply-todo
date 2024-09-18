@@ -6,10 +6,7 @@ import './HomePage.css';
 const HomePage = () => {
   return (
     <div>
-      <a
-        href="https://github.com/KadlagAkash/simply-todo"
-        target="_blank"
-      >
+      <a href="https://github.com/yntpdotme/simply-todo" target="_blank">
         <img src={reactIcon} className="logo react" alt="React logo" />
       </a>
       <p className="tagline">Be kind to your mind with</p>

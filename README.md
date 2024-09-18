@@ -11,13 +11,13 @@
 
 <div align= "center">
 
-[![Twitter Badge](https://img.shields.io/badge/-@KadlagAkash-1ca0f1?style=flat&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/KadlagAkash)](https://twitter.com/KadlagAkash) &nbsp; [![Linkedin Badge](https://img.shields.io/badge/-KadlagAkash-0e76a8?style=flat&labelColor=0e76a8&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kadlagakash/) &nbsp; [![Mail Badge](https://img.shields.io/badge/-akashkadlag14-c0392b?style=flat&labelColor=c0392b&logo=gmail&logoColor=white)](mailto:akashkadlag14@gmail.com) &nbsp; [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)&nbsp; [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Twitter Badge](https://img.shields.io/badge/-@yntpdotme-1ca0f1?style=flat&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/yntpdotme)](https://twitter.com/yntpdotme) &nbsp; [![Linkedin Badge](https://img.shields.io/badge/-yntpdotme-0e76a8?style=flat&labelColor=0e76a8&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yntpdotme/) &nbsp; [![Mail Badge](https://img.shields.io/badge/-akashkadlag14-c0392b?style=flat&labelColor=c0392b&logo=gmail&logoColor=white)](mailto:akashkadlag14@gmail.com) &nbsp; [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)&nbsp; [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 </div>
 
 <h2 align="center">
 
- <img src = "./assets/eyes-to-see.gif" width = 28px align="top"/> &nbsp;[Live Demo](https://simply-todo-client.vercel.app/) &nbsp;»
+<img src = "./assets/eyes-to-see.gif" width = 28px align="top"/> &nbsp;[Live Demo](https://simply-todo-client.vercel.app/) &nbsp;»
 
 </h2>
 
@@ -39,7 +39,6 @@
 ## <a name="introduction">❄️&nbsp; Introduction</a>
 
 Discover the essence of productivity with Simply Todo, an elegant task organization application. Delve into the codebase to explore more.
-
 
 <br>
 <a href="https://simply-todo-client.vercel.app/">
@@ -100,7 +99,7 @@ Discover the essence of productivity with Simply Todo, an elegant task organizat
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/KadlagAkash/simply-todo.git
+    git clone https://github.com/yntpdotme/simply-todo.git
     ```
 
 2.  **Navigate to the project directory:**
