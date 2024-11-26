@@ -18,7 +18,9 @@ const todoCreateValidator = todo => {
       })
       .trim()
       .min(3, {message: 'Description must be 3 or more characters long'})
-      .max(1024, {message: 'Description must be 1024 or fewer characters long'}),
+      .max(1024, {
+        message: 'Description must be 1024 or fewer characters long',
+      }),
   });
 
   return schema.safeParse(todo);

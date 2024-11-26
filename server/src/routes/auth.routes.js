@@ -4,12 +4,8 @@ import {registerUser, authenticateUser} from '../controllers/index.js';
 
 const router = express.Router();
 
-router
-  .route('/signup')
-  .post(registerUser);
+router.route('/signup').post(registerUser);
 
-router
-  .route('/signin')
-  .post(authenticateUser);
+router.route('/signin').post(authenticateUser);
 
 export default router;

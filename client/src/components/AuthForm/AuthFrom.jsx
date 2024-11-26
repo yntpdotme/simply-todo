@@ -32,7 +32,7 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
       if (error?.response?.data?.message) {
         errorMessage = error.response.data.message;
       }
-      
+
       setError('message', {
         type: 'manual',
         message: errorMessage,

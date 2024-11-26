@@ -15,9 +15,8 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-
 @media screen and (max-width: 480px) {
-  .logo{
+  .logo {
     height: 4rem;
     padding: 0.5rem;
   }

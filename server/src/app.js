@@ -35,7 +35,7 @@ const limiter = rateLimit({
       options.statusCode || 500,
       `There are too many requests. You are only allowed ${
         options.max
-      } requests per ${options.windowMs / 60000} minutes`
+      } requests per ${options.windowMs / 60000} minutes`,
     );
   },
 });

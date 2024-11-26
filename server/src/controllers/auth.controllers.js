@@ -31,8 +31,8 @@ const registerUser = asyncHandler(async (req, res) => {
       new ApiResponse(
         201,
         {user: createdUser, accessToken},
-        'User registered successfully'
-      )
+        'User registered successfully',
+      ),
     );
 });
 
@@ -59,8 +59,8 @@ const authenticateUser = asyncHandler(async (req, res) => {
     new ApiResponse(
       200,
       {user: signedInUser, accessToken},
-      'User signed in successfully'
-    )
+      'User signed in successfully',
+    ),
   );
 });
 

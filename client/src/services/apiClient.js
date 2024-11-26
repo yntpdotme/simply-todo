@@ -17,11 +17,11 @@ const createClient = withCredentials => {
     client.interceptors.request.use(
       async config => {
         config.headers.Authorization = `Bearer ${LocalStorage.get(
-          'accessToken'
+          'accessToken',
         )}`;
         return config;
       },
-      error => Promise.reject(error)
+      error => Promise.reject(error),
     );
   }
 
